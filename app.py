@@ -24,8 +24,9 @@ st.markdown("""
 ### Pages
 - **Menu**: browse recipes with filters  
 - **Recipe Details**: composition + computed nutrition  
-- **Customize**: update recipe defaults  
-- **Ingredients Admin**: CRUD  
+- **Customize**: Nutritional what-if for syrup/espresso changes  
+- **Ingredients Changes**: CRUD  
+- **Recipes Changes**: CRUD
 - **Dashboard**: charts from MongoDB aggregations
 """)
 
