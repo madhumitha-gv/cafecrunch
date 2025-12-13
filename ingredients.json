@@ -1,0 +1,347 @@
+[
+  {
+    "_id": "espresso_shot",
+    "name": "Espresso shot",
+    "unit": "shot",
+    "unit_ml": 30,
+    "nutrition_per_unit": {
+      "calories": 3,
+      "protein_g": 0.3,
+      "fat_g": 0.1,
+      "carbs_g": 0.5,
+      "sugar_g": 0,
+      "sodium_mg": 5,
+      "caffeine_mg": 63
+    },
+    "tags": [
+      "coffee",
+      "vegan",
+      "gluten_free"
+    ]
+  },
+  {
+    "_id": "water",
+    "name": "Water",
+    "unit": "ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 0,
+      "protein_g": 0,
+      "fat_g": 0,
+      "carbs_g": 0,
+      "sugar_g": 0,
+      "sodium_mg": 0,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "vegan",
+      "gluten_free"
+    ]
+  },
+  {
+    "_id": "ice",
+    "name": "Ice",
+    "unit": "ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 0,
+      "protein_g": 0,
+      "fat_g": 0,
+      "carbs_g": 0,
+      "sugar_g": 0,
+      "sodium_mg": 0,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "vegan",
+      "gluten_free"
+    ]
+  },
+  {
+    "_id": "milk_whole",
+    "name": "Whole milk",
+    "unit": "per_100ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 61,
+      "protein_g": 3.2,
+      "fat_g": 3.3,
+      "carbs_g": 4.8,
+      "sugar_g": 5.1,
+      "sodium_mg": 44,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "dairy"
+    ]
+  },
+  {
+    "_id": "milk_2",
+    "name": "2% milk",
+    "unit": "per_100ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 50,
+      "protein_g": 3.4,
+      "fat_g": 1.9,
+      "carbs_g": 5.0,
+      "sugar_g": 5.0,
+      "sodium_mg": 46,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "dairy"
+    ]
+  },
+  {
+    "_id": "milk_skim",
+    "name": "Skim milk",
+    "unit": "per_100ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 34,
+      "protein_g": 3.4,
+      "fat_g": 0.1,
+      "carbs_g": 5.0,
+      "sugar_g": 5.0,
+      "sodium_mg": 42,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "dairy"
+    ]
+  },
+  {
+    "_id": "milk_oat",
+    "name": "Oat milk",
+    "unit": "per_100ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 46,
+      "protein_g": 1.0,
+      "fat_g": 1.5,
+      "carbs_g": 7.0,
+      "sugar_g": 4.0,
+      "sodium_mg": 40,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "plant",
+      "vegan"
+    ]
+  },
+  {
+    "_id": "milk_almond",
+    "name": "Almond milk",
+    "unit": "per_100ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 15,
+      "protein_g": 0.6,
+      "fat_g": 1.1,
+      "carbs_g": 0.3,
+      "sugar_g": 0.2,
+      "sodium_mg": 60,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "plant",
+      "vegan",
+      "nut"
+    ]
+  },
+  {
+    "_id": "milk_soy",
+    "name": "Soy milk",
+    "unit": "per_100ml",
+    "unit_ml": 100,
+    "nutrition_per_unit": {
+      "calories": 33,
+      "protein_g": 3.0,
+      "fat_g": 1.6,
+      "carbs_g": 2.0,
+      "sugar_g": 1.9,
+      "sodium_mg": 45,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "plant",
+      "vegan"
+    ]
+  },
+  {
+    "_id": "syrup_vanilla",
+    "name": "Vanilla syrup",
+    "unit": "pump",
+    "unit_ml": 10,
+    "nutrition_per_unit": {
+      "calories": 20,
+      "protein_g": 0,
+      "fat_g": 0,
+      "carbs_g": 5,
+      "sugar_g": 5,
+      "sodium_mg": 0,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "vegan",
+      "gluten_free",
+      "sweetener"
+    ]
+  },
+  {
+    "_id": "syrup_caramel",
+    "name": "Caramel syrup",
+    "unit": "pump",
+    "unit_ml": 10,
+    "nutrition_per_unit": {
+      "calories": 25,
+      "protein_g": 0,
+      "fat_g": 0,
+      "carbs_g": 6,
+      "sugar_g": 6,
+      "sodium_mg": 15,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "vegan",
+      "gluten_free",
+      "sweetener"
+    ]
+  },
+  {
+    "_id": "syrup_hazelnut",
+    "name": "Hazelnut syrup",
+    "unit": "pump",
+    "unit_ml": 10,
+    "nutrition_per_unit": {
+      "calories": 25,
+      "protein_g": 0,
+      "fat_g": 0,
+      "carbs_g": 6,
+      "sugar_g": 6,
+      "sodium_mg": 0,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "vegan",
+      "gluten_free",
+      "sweetener",
+      "nut"
+    ]
+  },
+  {
+    "_id": "syrup_chocolate",
+    "name": "Chocolate syrup",
+    "unit": "pump",
+    "unit_ml": 10,
+    "nutrition_per_unit": {
+      "calories": 50,
+      "protein_g": 0.5,
+      "fat_g": 1.0,
+      "carbs_g": 12,
+      "sugar_g": 10,
+      "sodium_mg": 20,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "vegan",
+      "sweetener"
+    ]
+  },
+  {
+    "_id": "sauce_pumpkin_spice",
+    "name": "Pumpkin spice sauce",
+    "unit": "pump",
+    "unit_ml": 10,
+    "nutrition_per_unit": {
+      "calories": 35,
+      "protein_g": 0,
+      "fat_g": 0.5,
+      "carbs_g": 7,
+      "sugar_g": 6,
+      "sodium_mg": 10,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "seasonal_fall",
+      "sweetener"
+    ]
+  },
+  {
+    "_id": "syrup_peppermint",
+    "name": "Peppermint syrup",
+    "unit": "pump",
+    "unit_ml": 10,
+    "nutrition_per_unit": {
+      "calories": 20,
+      "protein_g": 0,
+      "fat_g": 0,
+      "carbs_g": 5,
+      "sugar_g": 5,
+      "sodium_mg": 0,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "seasonal_winter",
+      "sweetener"
+    ]
+  },
+  {
+    "_id": "brown_sugar_syrup",
+    "name": "Brown sugar syrup",
+    "unit": "pump",
+    "unit_ml": 10,
+    "nutrition_per_unit": {
+      "calories": 25,
+      "protein_g": 0,
+      "fat_g": 0,
+      "carbs_g": 6,
+      "sugar_g": 6,
+      "sodium_mg": 5,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "sweetener",
+      "vegan"
+    ]
+  },
+  {
+    "_id": "cinnamon_powder",
+    "name": "Cinnamon powder",
+    "unit": "gram",
+    "unit_ml": 1,
+    "nutrition_per_unit": {
+      "calories": 2.5,
+      "protein_g": 0.04,
+      "fat_g": 0.02,
+      "carbs_g": 0.8,
+      "sugar_g": 0.02,
+      "sodium_mg": 0.2,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "spice",
+      "vegan",
+      "gluten_free"
+    ]
+  },
+  {
+    "_id": "whipped_cream",
+    "name": "Whipped cream",
+    "unit": "dollop",
+    "unit_ml": 15,
+    "nutrition_per_unit": {
+      "calories": 50,
+      "protein_g": 0.3,
+      "fat_g": 5.3,
+      "carbs_g": 1.0,
+      "sugar_g": 1.0,
+      "sodium_mg": 5,
+      "caffeine_mg": 0
+    },
+    "tags": [
+      "dairy"
+    ]
+  }
+]

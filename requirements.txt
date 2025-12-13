@@ -1,0 +1,4 @@
+streamlit==1.37.1
+pymongo[srv]==4.8.0
+pandas==2.2.2
+plotly==5.23.0

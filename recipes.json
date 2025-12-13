@@ -1,0 +1,903 @@
+[
+  {
+    "_id": "iced_flavored_latte_small",
+    "name": "Iced Flavored Latte (Small)",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "syrup_id": "syrup_vanilla",
+      "syrup_pumps": 3,
+      "espresso_shots": 2,
+      "ice_pct": 0.65
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 231
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_vanilla",
+        "amount_pumps": 3
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 64
+      }
+    ],
+    "options": {
+      "milks": [
+        "milk_whole",
+        "milk_2",
+        "milk_skim",
+        "milk_oat",
+        "milk_almond",
+        "milk_soy"
+      ],
+      "syrups": [
+        "syrup_vanilla",
+        "syrup_caramel",
+        "syrup_hazelnut",
+        "syrup_chocolate"
+      ]
+    }
+  },
+  {
+    "_id": "iced_flavored_latte_medium",
+    "name": "Iced Flavored Latte (Medium)",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "syrup_id": "syrup_vanilla",
+      "syrup_pumps": 4,
+      "espresso_shots": 2,
+      "ice_pct": 0.7
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 331
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_vanilla",
+        "amount_pumps": 4
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 42
+      }
+    ],
+    "options": {
+      "milks": [
+        "milk_whole",
+        "milk_2",
+        "milk_skim",
+        "milk_oat",
+        "milk_almond",
+        "milk_soy"
+      ],
+      "syrups": [
+        "syrup_vanilla",
+        "syrup_caramel",
+        "syrup_hazelnut",
+        "syrup_chocolate"
+      ]
+    }
+  },
+  {
+    "_id": "iced_flavored_latte_large",
+    "name": "Iced Flavored Latte (Large)",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "syrup_id": "syrup_vanilla",
+      "syrup_pumps": 5,
+      "espresso_shots": 3,
+      "ice_pct": 0.7
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 414
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "syrup_vanilla",
+        "amount_pumps": 5
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 77
+      }
+    ],
+    "options": {
+      "milks": [
+        "milk_whole",
+        "milk_2",
+        "milk_skim",
+        "milk_oat",
+        "milk_almond",
+        "milk_soy"
+      ],
+      "syrups": [
+        "syrup_vanilla",
+        "syrup_caramel",
+        "syrup_hazelnut",
+        "syrup_chocolate"
+      ]
+    }
+  },
+  {
+    "_id": "hot_latte_small",
+    "name": "Hot Latte (Small)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 2
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 295
+      }
+    ],
+    "options": {
+      "milks": [
+        "milk_whole",
+        "milk_2",
+        "milk_skim",
+        "milk_oat",
+        "milk_almond",
+        "milk_soy"
+      ]
+    }
+  },
+  {
+    "_id": "hot_latte_medium",
+    "name": "Hot Latte (Medium)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 2
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 413
+      }
+    ],
+    "options": {
+      "milks": [
+        "milk_whole",
+        "milk_2",
+        "milk_skim",
+        "milk_oat",
+        "milk_almond",
+        "milk_soy"
+      ]
+    }
+  },
+  {
+    "_id": "hot_latte_large",
+    "name": "Hot Latte (Large)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 3
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 501
+      }
+    ],
+    "options": {
+      "milks": [
+        "milk_whole",
+        "milk_2",
+        "milk_skim",
+        "milk_oat",
+        "milk_almond",
+        "milk_soy"
+      ]
+    }
+  },
+  {
+    "_id": "mocha_small",
+    "name": "Mocha (Small)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 2,
+      "syrup_id": "syrup_chocolate",
+      "syrup_pumps": 2
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_chocolate",
+        "amount_pumps": 2
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 275
+      }
+    ],
+    "options": {
+      "milks": [
+        "milk_whole",
+        "milk_2",
+        "milk_skim",
+        "milk_oat",
+        "milk_almond",
+        "milk_soy"
+      ],
+      "syrups": [
+        "syrup_chocolate",
+        "syrup_vanilla",
+        "syrup_caramel"
+      ]
+    }
+  },
+  {
+    "_id": "mocha_medium",
+    "name": "Mocha (Medium)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 2,
+      "syrup_id": "syrup_chocolate",
+      "syrup_pumps": 3
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_chocolate",
+        "amount_pumps": 3
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 383
+      }
+    ]
+  },
+  {
+    "_id": "mocha_large",
+    "name": "Mocha (Large)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 3,
+      "syrup_id": "syrup_chocolate",
+      "syrup_pumps": 4
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "syrup_chocolate",
+        "amount_pumps": 4
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 491
+      }
+    ]
+  },
+  {
+    "_id": "americano_hot_small",
+    "name": "Americano (Small)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 2
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "water",
+        "amount_ml": 295
+      }
+    ]
+  },
+  {
+    "_id": "americano_hot_medium",
+    "name": "Americano (Medium)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 3
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "water",
+        "amount_ml": 383
+      }
+    ]
+  },
+  {
+    "_id": "americano_hot_large",
+    "name": "Americano (Large)",
+    "category": "core",
+    "temperature": "hot",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 4
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 4
+      },
+      {
+        "ingredient_id": "water",
+        "amount_ml": 471
+      }
+    ]
+  },
+  {
+    "_id": "americano_iced_small",
+    "name": "Iced Americano (Small)",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 2,
+      "ice_pct": 0.65
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 231
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "water",
+        "amount_ml": 94
+      }
+    ]
+  },
+  {
+    "_id": "americano_iced_medium",
+    "name": "Iced Americano (Medium)",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 3,
+      "ice_pct": 0.7
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 331
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "water",
+        "amount_ml": 142
+      }
+    ]
+  },
+  {
+    "_id": "americano_iced_large",
+    "name": "Iced Americano (Large)",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 4,
+      "ice_pct": 0.7
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 414
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 4
+      },
+      {
+        "ingredient_id": "water",
+        "amount_ml": 147
+      }
+    ]
+  },
+  {
+    "_id": "iced_latte_light_sweet_small",
+    "name": "Iced Latte (Light Sweet) Small",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_oat",
+      "espresso_shots": 2,
+      "syrup_id": "syrup_vanilla",
+      "syrup_pumps": 1,
+      "ice_pct": 0.65
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 231
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_vanilla",
+        "amount_pumps": 1
+      },
+      {
+        "ingredient_id": "milk_oat",
+        "amount_ml": 64
+      }
+    ]
+  },
+  {
+    "_id": "iced_latte_light_sweet_medium",
+    "name": "Iced Latte (Light Sweet) Medium",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_oat",
+      "espresso_shots": 2,
+      "syrup_id": "syrup_vanilla",
+      "syrup_pumps": 2,
+      "ice_pct": 0.65
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 307
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_vanilla",
+        "amount_pumps": 2
+      },
+      {
+        "ingredient_id": "milk_oat",
+        "amount_ml": 126
+      }
+    ]
+  },
+  {
+    "_id": "iced_latte_light_sweet_large",
+    "name": "Iced Latte (Light Sweet) Large",
+    "category": "core",
+    "temperature": "iced",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_oat",
+      "espresso_shots": 3,
+      "syrup_id": "syrup_vanilla",
+      "syrup_pumps": 2,
+      "ice_pct": 0.65
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 384
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "syrup_vanilla",
+        "amount_pumps": 2
+      },
+      {
+        "ingredient_id": "milk_oat",
+        "amount_ml": 117
+      }
+    ]
+  },
+  {
+    "_id": "pumpkin_spice_latte_small",
+    "name": "Pumpkin Spice Latte (Small)",
+    "category": "seasonal",
+    "season": [
+      "fall"
+    ],
+    "temperature": "hot",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_2",
+      "espresso_shots": 2,
+      "sauce_id": "sauce_pumpkin_spice",
+      "sauce_pumps": 2
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "sauce_pumpkin_spice",
+        "amount_pumps": 2
+      },
+      {
+        "ingredient_id": "milk_2",
+        "amount_ml": 275
+      },
+      {
+        "ingredient_id": "whipped_cream",
+        "amount_ml": 15
+      },
+      {
+        "ingredient_id": "cinnamon_powder",
+        "amount_ml": 1
+      }
+    ]
+  },
+  {
+    "_id": "pumpkin_spice_latte_medium",
+    "name": "Pumpkin Spice Latte (Medium)",
+    "category": "seasonal",
+    "season": [
+      "fall"
+    ],
+    "temperature": "hot",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_2",
+      "espresso_shots": 2,
+      "sauce_id": "sauce_pumpkin_spice",
+      "sauce_pumps": 3
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "sauce_pumpkin_spice",
+        "amount_pumps": 3
+      },
+      {
+        "ingredient_id": "milk_2",
+        "amount_ml": 383
+      },
+      {
+        "ingredient_id": "whipped_cream",
+        "amount_ml": 15
+      },
+      {
+        "ingredient_id": "cinnamon_powder",
+        "amount_ml": 1
+      }
+    ]
+  },
+  {
+    "_id": "pumpkin_spice_latte_large",
+    "name": "Pumpkin Spice Latte (Large)",
+    "category": "seasonal",
+    "season": [
+      "fall"
+    ],
+    "temperature": "hot",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_2",
+      "espresso_shots": 3,
+      "sauce_id": "sauce_pumpkin_spice",
+      "sauce_pumps": 4
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "sauce_pumpkin_spice",
+        "amount_pumps": 4
+      },
+      {
+        "ingredient_id": "milk_2",
+        "amount_ml": 491
+      },
+      {
+        "ingredient_id": "whipped_cream",
+        "amount_ml": 15
+      },
+      {
+        "ingredient_id": "cinnamon_powder",
+        "amount_ml": 1
+      }
+    ]
+  },
+  {
+    "_id": "peppermint_mocha_small",
+    "name": "Peppermint Mocha (Small)",
+    "category": "seasonal",
+    "season": [
+      "winter"
+    ],
+    "temperature": "hot",
+    "size_ml": 355,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 2,
+      "syrup_id": "syrup_peppermint",
+      "syrup_pumps": 2,
+      "choc_pumps": 2
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_peppermint",
+        "amount_pumps": 2
+      },
+      {
+        "ingredient_id": "syrup_chocolate",
+        "amount_pumps": 2
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 275
+      },
+      {
+        "ingredient_id": "whipped_cream",
+        "amount_ml": 15
+      }
+    ]
+  },
+  {
+    "_id": "peppermint_mocha_medium",
+    "name": "Peppermint Mocha (Medium)",
+    "category": "seasonal",
+    "season": [
+      "winter"
+    ],
+    "temperature": "hot",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 2,
+      "syrup_id": "syrup_peppermint",
+      "syrup_pumps": 3,
+      "choc_pumps": 3
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 2
+      },
+      {
+        "ingredient_id": "syrup_peppermint",
+        "amount_pumps": 3
+      },
+      {
+        "ingredient_id": "syrup_chocolate",
+        "amount_pumps": 3
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 383
+      },
+      {
+        "ingredient_id": "whipped_cream",
+        "amount_ml": 15
+      }
+    ]
+  },
+  {
+    "_id": "peppermint_mocha_large",
+    "name": "Peppermint Mocha (Large)",
+    "category": "seasonal",
+    "season": [
+      "winter"
+    ],
+    "temperature": "hot",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "milk_id": "milk_whole",
+      "espresso_shots": 3,
+      "syrup_id": "syrup_peppermint",
+      "syrup_pumps": 4,
+      "choc_pumps": 4
+    },
+    "composition": [
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "syrup_peppermint",
+        "amount_pumps": 4
+      },
+      {
+        "ingredient_id": "syrup_chocolate",
+        "amount_pumps": 4
+      },
+      {
+        "ingredient_id": "milk_whole",
+        "amount_ml": 491
+      },
+      {
+        "ingredient_id": "whipped_cream",
+        "amount_ml": 15
+      }
+    ]
+  },
+  {
+    "_id": "brown_sugar_oat_shaken_espresso_medium",
+    "name": "Brown Sugar Oat Shaken Espresso (Medium)",
+    "category": "seasonal",
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "temperature": "iced",
+    "size_ml": 473,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 3,
+      "ice_pct": 0.65,
+      "syrup_id": "brown_sugar_syrup",
+      "syrup_pumps": 3,
+      "milk_id": "milk_oat"
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 307
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 3
+      },
+      {
+        "ingredient_id": "brown_sugar_syrup",
+        "amount_pumps": 3
+      },
+      {
+        "ingredient_id": "milk_oat",
+        "amount_ml": 96
+      },
+      {
+        "ingredient_id": "cinnamon_powder",
+        "amount_ml": 1
+      }
+    ]
+  },
+  {
+    "_id": "brown_sugar_oat_shaken_espresso_large",
+    "name": "Brown Sugar Oat Shaken Espresso (Large)",
+    "category": "seasonal",
+    "season": [
+      "spring",
+      "summer"
+    ],
+    "temperature": "iced",
+    "size_ml": 591,
+    "recipe_ok": true,
+    "defaults": {
+      "espresso_shots": 4,
+      "ice_pct": 0.65,
+      "syrup_id": "brown_sugar_syrup",
+      "syrup_pumps": 4,
+      "milk_id": "milk_oat"
+    },
+    "composition": [
+      {
+        "ingredient_id": "ice",
+        "amount_ml": 384
+      },
+      {
+        "ingredient_id": "espresso_shot",
+        "amount_shots": 4
+      },
+      {
+        "ingredient_id": "brown_sugar_syrup",
+        "amount_pumps": 4
+      },
+      {
+        "ingredient_id": "milk_oat",
+        "amount_ml": 143
+      },
+      {
+        "ingredient_id": "cinnamon_powder",
+        "amount_ml": 1
+      }
+    ]
+  }
+]
