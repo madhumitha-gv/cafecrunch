@@ -45,6 +45,8 @@ def ingredient_map() -> Dict[str, Dict[str, Any]]:
 # ---------- Writes ----------
 def update_recipe_defaults(recipe_id: str, patch: Dict[str, Any]) -> int:
     _, recipes = colls()
+    if not patch:
+        return 0
     res = recipes.update_one(
         {"_id": recipe_id},
         {"$set": {f"defaults.{k}": v for k, v in patch.items()}}
@@ -58,6 +60,18 @@ def upsert_ingredient(doc: Dict[str, Any]) -> None:
 def delete_ingredient(ingredient_id: str) -> int:
     ing, _ = colls()
     return ing.delete_one({"_id": ingredient_id}).deleted_count
+
+
+def upsert_recipe(doc: Dict[str, Any]) -> None:
+    """Insert new or replace existing recipe by _id."""
+    _, recipes = colls()
+    recipes.replace_one({"_id": doc["_id"]}, doc, upsert=True)
+
+
+def delete_recipe(recipe_id: str) -> int:
+    """Delete a recipe by _id. Returns deleted_count (0 or 1)."""
+    _, recipes = colls()
+    return recipes.delete_one({"_id": recipe_id}).deleted_count
 
 # ---------- Dashboard aggregations ----------
 def agg_counts_category_temp():
@@ -132,4 +146,3 @@ def agg_calories_topn(n=10):
         {"$limit": int(n)},
     ]
     return list(recipes.aggregate(pipeline))
-
