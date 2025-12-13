@@ -3,11 +3,86 @@ from typing import Any, Dict, List, Optional
 
 from db import get_recipe, list_ingredients, list_recipes
 
-st.title("🧪 Nutrition What‑If: Customize a Drink")
+# -----------------------------
+# Theme (match Dashboard)
+# -----------------------------
+COLORS = {
+    "espresso": "#1B0E07",
+    "dark_roast": "#3C2415",
+    "mocha": "#5D4037",
+    "caramel": "#C4873A",
+    "latte": "#D4A574",
+    "cream": "#F5E6D3",
+    "paper": "#FBF6EE",
+    "border": "#D7B98A",
+    "sage": "#81C784",
+    "berry": "#E57373",
+    "gold": "#FFB300",
+    "white": "#FFFFFF",
+}
 
-st.caption(
-    "Adjust syrup pumps and espresso shots to see how nutrition changes. "
-    "These changes are temporary and are NOT saved to the database."
+THEME_CSS = f"""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700&display=swap');
+
+html, body, [class*="css"] {{
+  font-family: 'Nunito', sans-serif;
+}}
+
+.stApp {{
+  background: radial-gradient(1200px 800px at 15% 10%, {COLORS['paper']} 0%, {COLORS['cream']} 60%, #F3E0C9 100%);
+}}
+
+.cc-title {{
+  font-family: 'Playfair Display', serif;
+  color: {COLORS['espresso']};
+  letter-spacing: 0.2px;
+  margin: 0;
+}}
+
+.cc-subtitle {{
+  color: {COLORS['mocha']};
+  margin-top: 0.35rem;
+}}
+
+.cc-divider {{
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, {COLORS['border']} 20%, {COLORS['border']} 80%, transparent 100%);
+  margin: 0.75rem 0 1.25rem 0;
+}}
+
+.cc-card {{
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(215,185,138,0.65);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(27,14,7,0.06);
+}}
+
+.cc-h3 {{
+  font-family: 'Playfair Display', serif;
+  color: {COLORS['espresso']};
+  margin: 0 0 0.25rem 0;
+}}
+
+[data-testid="stMetric"] {{
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(215,185,138,0.55);
+  border-radius: 14px;
+  padding: 14px 14px;
+}}
+
+</style>
+"""
+st.markdown(THEME_CSS, unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <h1 class="cc-title">🧪 Nutrition What‑If</h1>
+    <p class="cc-subtitle">Adjust syrup pumps and espresso shots to see how nutrition changes. These changes are temporary and are <b>not</b> saved.</p>
+    <div class="cc-divider"></div>
+    """,
+    unsafe_allow_html=True,
 )
 
 # -----------------------------
@@ -35,9 +110,12 @@ pairs = sorted(pairs, key=lambda x: x[0].lower())
 labels = [""] + [p[0] for p in pairs]
 id_by_label = {p[0]: p[1] for p in pairs}
 
-st.markdown("### 1) Pick a recipe")
+st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
+st.markdown("<h3 class='cc-h3'>1) Pick a recipe</h3>", unsafe_allow_html=True)
 sel = st.selectbox("Select a recipe", options=labels, key="whatif_recipe_label")
 rid = id_by_label.get(sel)
+st.markdown("</div>", unsafe_allow_html=True)
+st.write("")
 
 if not rid:
     st.info("Select a recipe from the dropdown to continue.")
@@ -138,12 +216,15 @@ def _apply_whatif(recipe_doc: Dict[str, Any], espresso_shots: int, syrup_pumps: 
 # -----------------------------
 # Baseline + UI
 # -----------------------------
-st.subheader(r.get("name", r.get("_id", rid)))
+st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
+st.markdown(f"<h3 class='cc-h3'>{r.get('name', r.get('_id', rid))}</h3>", unsafe_allow_html=True)
 
 m1, m2, m3 = st.columns(3)
 m1.metric("Category", r.get("category", "-"))
 m2.metric("Temperature", r.get("temperature", "-"))
 m3.metric("Size (ml)", r.get("size_ml", "-"))
+st.markdown("</div>", unsafe_allow_html=True)
+st.write("")
 
 defaults = r.get("defaults", {}) if isinstance(r.get("defaults"), dict) else {}
 base_shots = int(defaults.get("espresso_shots") or 0)
@@ -157,8 +238,9 @@ if not base_syrup_id:
 state_key = f"whatif::{r.get('_id', rid)}"
 st.session_state.setdefault(state_key, {"espresso_shots": base_shots, "syrup_pumps": base_pumps, "show": False})
 
+st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
 with st.form(key="whatif_form", clear_on_submit=False):
-    st.markdown("### 2) Adjust the recipe")
+    st.markdown("<h3 class='cc-h3'>2) Adjust the recipe</h3>", unsafe_allow_html=True)
     c1, c2 = st.columns(2)
 
     with c1:
@@ -184,6 +266,9 @@ with st.form(key="whatif_form", clear_on_submit=False):
     next_clicked = b1.form_submit_button("Next ➜ See updated nutrition")
     reset_clicked = b2.form_submit_button("Reset to recipe defaults")
 
+st.markdown("</div>", unsafe_allow_html=True)
+st.write("")
+
 if reset_clicked:
     st.session_state[state_key] = {"espresso_shots": base_shots, "syrup_pumps": base_pumps, "show": False}
     st.rerun()
@@ -200,7 +285,8 @@ if next_clicked:
 if not st.session_state[state_key].get("show"):
     st.stop()
 
-st.markdown("### 3) Nutrition results")
+st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
+st.markdown("<h3 class='cc-h3'>3) Nutrition results</h3>", unsafe_allow_html=True)
 
 baseline_doc = r
 updated_doc = _apply_whatif(
@@ -246,3 +332,4 @@ with st.expander("Show baseline vs updated details"):
         "sugar_g": _round(new_tot["sugar_g"]),
         "caffeine_mg": _round(new_tot["caffeine_mg"]),
     })
+st.markdown("</div>", unsafe_allow_html=True)

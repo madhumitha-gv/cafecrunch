@@ -7,7 +7,93 @@ import streamlit as st
 
 from db import list_recipes, get_recipe, upsert_recipe, delete_recipe, list_ingredients
 
-st.title("📋 Recipes Admin")
+# -----------------------------
+# Theme (match Dashboard)
+# -----------------------------
+COLORS = {
+    "espresso": "#1B0E07",
+    "dark_roast": "#3C2415",
+    "mocha": "#5D4037",
+    "caramel": "#C4873A",
+    "latte": "#D4A574",
+    "cream": "#F5E6D3",
+    "paper": "#FBF6EE",
+    "border": "#D7B98A",
+    "sage": "#81C784",
+    "berry": "#E57373",
+    "gold": "#FFB300",
+    "white": "#FFFFFF",
+}
+
+THEME_CSS = f"""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700&display=swap');
+
+html, body, [class*="css"] {{
+  font-family: 'Nunito', sans-serif;
+}}
+
+.stApp {{
+  background: radial-gradient(1200px 800px at 15% 10%, {COLORS['paper']} 0%, {COLORS['cream']} 60%, #F3E0C9 100%);
+}}
+
+.cc-title {{
+  font-family: 'Playfair Display', serif;
+  color: {COLORS['espresso']};
+  letter-spacing: 0.2px;
+  margin: 0;
+}}
+
+.cc-subtitle {{
+  color: {COLORS['mocha']};
+  margin-top: 0.35rem;
+}}
+
+.cc-divider {{
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, {COLORS['border']} 20%, {COLORS['border']} 80%, transparent 100%);
+  margin: 0.75rem 0 1.25rem 0;
+}}
+
+.cc-card {{
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(215,185,138,0.65);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(27,14,7,0.06);
+}}
+
+.cc-h3 {{
+  font-family: 'Playfair Display', serif;
+  color: {COLORS['espresso']};
+  margin: 0 0 0.25rem 0;
+}}
+
+div[data-testid="stDataFrame"] {{
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(215,185,138,0.55);
+  border-radius: 14px;
+  padding: 10px;
+}}
+
+[data-testid="stMetric"] {{
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(215,185,138,0.55);
+  border-radius: 14px;
+  padding: 14px 14px;
+}}
+</style>
+"""
+st.markdown(THEME_CSS, unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <h1 class="cc-title">📋 Recipes Admin</h1>
+    <p class="cc-subtitle">Create, update, and delete recipes (defaults, composition, and options).</p>
+    <div class="cc-divider"></div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Mirror Ingredients Admin layout
 # Tab 1: Browse/Delete
@@ -51,7 +137,10 @@ def _remove_comp_row(i: int) -> None:
 
 
 # Pull ingredients once for dropdowns
-ings = list_ingredients(limit=5000)
+try:
+    ings = list_ingredients(limit=5000)
+except TypeError:
+    ings = list_ingredients()
 ing_ids = sorted([d.get("_id") for d in ings if d.get("_id")])
 
 milk_ids = [i for i in ing_ids if str(i).startswith("milk_")]
@@ -64,7 +153,9 @@ sauce_ids = [i for i in ing_ids if str(i).startswith("sauce_")]
 # ----------------------------
 
 with tab1:
-    st.subheader("Browse")
+    st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
+
+    st.markdown("<h3 class='cc-h3'>Browse</h3>", unsafe_allow_html=True)
 
     c1, c2, c3 = st.columns(3)
     with c1:
@@ -90,7 +181,7 @@ with tab1:
         )
 
     st.markdown("---")
-    st.subheader("Delete")
+    st.markdown("<h3 class='cc-h3' style='margin-top: 1rem;'>Delete</h3>", unsafe_allow_html=True)
 
     del_id = st.text_input("Delete recipe _id", placeholder="e.g., iced_latte_small")
     if st.button("Delete recipe"):
@@ -100,13 +191,18 @@ with tab1:
         else:
             st.warning("Enter an _id first.")
 
+    st.markdown("</div>", unsafe_allow_html=True)
+
 
 # ----------------------------
 # Tab 2: Add / Update (Upsert)
 # ----------------------------
 
 with tab2:
-    st.markdown("Upsert = insert new or replace existing.")
+    st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
+
+    st.markdown("<h3 class='cc-h3'>Add / Update</h3>", unsafe_allow_html=True)
+    st.caption("Upsert = insert new or replace existing.")
 
     # Persist loaded recipe across reruns
     if "recipe_loaded" not in st.session_state:
@@ -409,3 +505,5 @@ with tab2:
                 st.success("Upserted ✅")
             except Exception as e:
                 st.error(f"Upsert failed: {e}")
+
+    st.markdown("</div>", unsafe_allow_html=True)

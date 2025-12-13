@@ -2,13 +2,96 @@ import streamlit as st
 import pandas as pd
 from db import list_ingredients, upsert_ingredient, delete_ingredient
 
-st.title("🧪 Ingredients Changes")
+# -----------------------------
+# Theme (match Dashboard)
+# -----------------------------
+COLORS = {
+    "espresso": "#1B0E07",
+    "dark_roast": "#3C2415",
+    "mocha": "#5D4037",
+    "caramel": "#C4873A",
+    "latte": "#D4A574",
+    "cream": "#F5E6D3",
+    "paper": "#FBF6EE",
+    "border": "#D7B98A",
+    "sage": "#81C784",
+    "berry": "#E57373",
+    "gold": "#FFB300",
+    "white": "#FFFFFF",
+}
+
+THEME_CSS = f"""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700&display=swap');
+
+html, body, [class*="css"] {{
+  font-family: 'Nunito', sans-serif;
+}}
+
+.stApp {{
+  background: radial-gradient(1200px 800px at 15% 10%, {COLORS['paper']} 0%, {COLORS['cream']} 60%, #F3E0C9 100%);
+}}
+
+.cc-title {{
+  font-family: 'Playfair Display', serif;
+  color: {COLORS['espresso']};
+  letter-spacing: 0.2px;
+  margin: 0;
+}}
+
+.cc-subtitle {{
+  color: {COLORS['mocha']};
+  margin-top: 0.35rem;
+}}
+
+.cc-divider {{
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, {COLORS['border']} 20%, {COLORS['border']} 80%, transparent 100%);
+  margin: 0.75rem 0 1.25rem 0;
+}}
+
+.cc-card {{
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(215,185,138,0.65);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(27,14,7,0.06);
+}}
+
+.cc-h3 {{
+  font-family: 'Playfair Display', serif;
+  color: {COLORS['espresso']};
+  margin: 0 0 0.25rem 0;
+}}
+
+div[data-testid="stDataFrame"] {{
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(215,185,138,0.55);
+  border-radius: 14px;
+  padding: 10px;
+}}
+
+</style>
+"""
+st.markdown(THEME_CSS, unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <h1 class="cc-title">🧪 Ingredients Admin</h1>
+    <p class="cc-subtitle">Create, update, and delete ingredient records (nutrition per unit + tags).</p>
+    <div class="cc-divider"></div>
+    """,
+    unsafe_allow_html=True,
+)
 
 tab1, tab2 = st.tabs(["Browse/Delete", "Add/Update"])
 
 with tab1:
+    st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
+    st.markdown("<h3 class='cc-h3'>Browse</h3>", unsafe_allow_html=True)
     df = pd.DataFrame(list_ingredients())
     st.dataframe(df[["_id","name","unit","unit_ml"]], use_container_width=True, hide_index=True)
+    st.markdown("<h3 class='cc-h3' style='margin-top: 1rem;'>Delete</h3>", unsafe_allow_html=True)
     del_id = st.text_input("Delete ingredient _id", placeholder="e.g., syrup_vanilla")
     if st.button("Delete"):
         if del_id.strip():
@@ -16,9 +99,12 @@ with tab1:
             st.success("Deleted ✅" if ok else "Not found.")
         else:
             st.warning("Enter an _id first.")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 with tab2:
-    st.markdown("Upsert = insert new or replace existing.")
+    st.markdown("<div class='cc-card'>", unsafe_allow_html=True)
+    st.markdown("<h3 class='cc-h3'>Add / Update</h3>", unsafe_allow_html=True)
+    st.caption("Upsert = insert new or replace existing.")
 
     # --- Load existing ingredient (dropdown) ---
     df_all = pd.DataFrame(list_ingredients())
@@ -114,3 +200,4 @@ with tab2:
             upsert_ingredient(doc)
             st.session_state["ing_loaded"] = doc
             st.success("Upserted ✅")
+    st.markdown("</div>", unsafe_allow_html=True)
