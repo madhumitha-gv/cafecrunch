@@ -77,7 +77,7 @@ st.markdown(THEME_CSS, unsafe_allow_html=True)
 
 st.markdown(
     """
-    <h1 class="cc-title">🧪 Ingredients Admin</h1>
+    <h1 class="cc-title">🧂 Ingredients Admin</h1>
     <p class="cc-subtitle">Create, update, and delete ingredient records (nutrition per unit + tags).</p>
     <div class="cc-divider"></div>
     """,

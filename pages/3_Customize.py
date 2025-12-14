@@ -78,7 +78,7 @@ st.markdown(THEME_CSS, unsafe_allow_html=True)
 
 st.markdown(
     """
-    <h1 class="cc-title">🧪 Nutrition What‑If</h1>
+    <h1 class="cc-title">✨ Nutrition What‑If</h1>
     <p class="cc-subtitle">Adjust syrup pumps and espresso shots to see how nutrition changes. These changes are temporary and are <b>not</b> saved.</p>
     <div class="cc-divider"></div>
     """,
